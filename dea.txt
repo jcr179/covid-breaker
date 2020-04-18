@@ -1,0 +1,250 @@
+174 _Afghanistan
+60 _Albania
+254 _Algeria
+51 _Andorra
+258 _Angola
+208 _Antigua and Barbuda
+235 _Argentina
+13 _Armenia
+99 Australian Capital Territory_Australia
+90 New South Wales_Australia
+227 Northern Territory_Australia
+256 Queensland_Australia
+162 South Australia_Australia
+250 Tasmania_Australia
+50 Victoria_Australia
+246 Western Australia_Australia
+149 _Austria
+87 _Azerbaijan
+175 _Bahamas
+243 _Bahrain
+11 _Bangladesh
+146 _Barbados
+251 _Belarus
+155 _Belgium
+236 _Belize
+81 _Benin
+101 _Bhutan
+180 _Bolivia
+43 _Bosnia and Herzegovina
+228 _Brazil
+18 _Brunei
+138 _Bulgaria
+209 _Burkina Faso
+161 _Cabo Verde
+156 _Cambodia
+46 _Cameroon
+215 _Canada
+139 _Central African Republic
+143 _Chad
+48 _Chile
+244 Anhui_China
+216 Beijing_China
+226 Chongqing_China
+6 Fujian_China
+63 Gansu_China
+164 Guangdong_China
+247 Guangxi_China
+68 Guizhou_China
+61 Hainan_China
+203 Hebei_China
+44 Heilongjiang_China
+191 Henan_China
+178 Hong Kong_China
+147 Hubei_China
+40 Hunan_China
+217 Inner Mongolia_China
+248 Jiangsu_China
+152 Jiangxi_China
+62 Jilin_China
+181 Liaoning_China
+210 Macau_China
+84 Ningxia_China
+159 Qinghai_China
+160 Shaanxi_China
+20 Shandong_China
+221 Shanghai_China
+114 Shanxi_China
+237 Sichuan_China
+47 Tianjin_China
+182 Tibet_China
+10 Xinjiang_China
+64 Yunnan_China
+116 Zhejiang_China
+263 _Colombia
+129 _Congo (Brazzaville)
+95 _Congo (Kinshasa)
+110 _Costa Rica
+94 _Cote d'Ivoire
+80 _Croatia
+188 _Diamond Princess
+12 _Cuba
+198 _Cyprus
+73 _Czechia
+89 Faroe Islands_Denmark
+140 Greenland_Denmark
+66 _Denmark
+76 _Djibouti
+24 _Dominica
+136 _Dominican Republic
+195 _Ecuador
+199 _Egypt
+91 _El Salvador
+169 _Equatorial Guinea
+7 _Eritrea
+218 _Estonia
+113 _Eswatini
+167 _Ethiopia
+74 _Fiji
+153 _Finland
+32 French Guiana_France
+204 French Polynesia_France
+118 Guadeloupe_France
+49 Martinique_France
+253 Mayotte_France
+33 New Caledonia_France
+14 Reunion_France
+21 Saint Barthelemy_France
+201 St Martin_France
+126 _France
+192 _Gabon
+41 _Gambia
+71 _Georgia
+132 _Germany
+193 _Ghana
+106 _Grenada
+238 _Greece
+119 _Guatemala
+151 _Guinea
+27 _Guinea-Bissau
+3 _Guyana
+15 _Haiti
+77 _Holy See
+22 _Honduras
+0 _Hungary
+34 _Iceland
+170 _India
+123 _Indonesia
+261 _Iran
+184 _Iraq
+102 _Ireland
+252 _Israel
+9 _Italy
+154 _Jamaica
+214 _Japan
+115 _Jordan
+25 _Kazakhstan
+234 _Kenya
+133 _Korea, South
+239 _Kuwait
+172 _Kyrgyzstan
+142 _Latvia
+124 _Lebanon
+35 _Liberia
+79 _Libya
+245 _Liechtenstein
+183 _Lithuania
+242 _Luxembourg
+112 _Madagascar
+117 _Malaysia
+36 _Maldives
+1 _Mali
+128 _Malta
+2 _Mauritania
+58 _Mauritius
+259 _Mexico
+52 _Moldova
+220 _Monaco
+125 _Mongolia
+177 _Montenegro
+148 _Morocco
+179 _Mozambique
+103 _Namibia
+229 _Nepal
+231 Aruba_Netherlands
+39 Curacao_Netherlands
+205 Sint Maarten_Netherlands
+30 _Netherlands
+165 _New Zealand
+206 _Nicaragua
+96 _Niger
+131 _Nigeria
+262 _North Macedonia
+31 _Norway
+255 _Oman
+56 _Pakistan
+69 _Panama
+26 _Papua New Guinea
+54 _Paraguay
+241 _Peru
+187 _Philippines
+17 _Poland
+171 _Portugal
+92 _Qatar
+225 _Romania
+67 _Russia
+141 _Rwanda
+207 _Saint Kitts and Nevis
+4 _Saint Lucia
+137 _Saint Vincent and the Grenadines
+168 _San Marino
+120 _Saudi Arabia
+100 _Senegal
+185 _Serbia
+224 _Seychelles
+197 _Singapore
+223 _Slovakia
+157 _Slovenia
+70 _Somalia
+45 _South Africa
+57 _Spain
+105 _Sri Lanka
+108 _Sudan
+88 _Suriname
+173 _Sweden
+16 _Switzerland
+264 _Syria
+176 _Taiwan*
+107 _Tanzania
+8 _Thailand
+212 _Timor-Leste
+196 _Togo
+59 _Trinidad and Tobago
+78 _Tunisia
+93 _Turkey
+166 _Uganda
+97 _Ukraine
+213 _United Arab Emirates
+145 Bermuda_United Kingdom
+186 Cayman Islands_United Kingdom
+232 Channel Islands_United Kingdom
+23 Gibraltar_United Kingdom
+249 Isle of Man_United Kingdom
+158 Montserrat_United Kingdom
+82 _United Kingdom
+37 _Uruguay
+135 _US
+211 _Uzbekistan
+65 _Venezuela
+104 _Vietnam
+200 _Zambia
+134 _Zimbabwe
+38 _West Bank and Gaza
+86 _Laos
+121 _Kosovo
+29 _Burma
+72 Anguilla_United Kingdom
+5 British Virgin Islands_United Kingdom
+202 Turks and Caicos Islands_United Kingdom
+219 _MS Zaandam
+127 _Botswana
+83 _Burundi
+189 _Sierra Leone
+130 Bonaire, Sint Eustatius and Saba_Netherlands
+109 _Malawi
+194 Falkland Islands (Malvinas)_United Kingdom
+53 Saint Pierre and Miquelon_France
+150 _South Sudan
+257 _Western Sahara
+122 _Sao Tome and Principe
+42 _Yemen
