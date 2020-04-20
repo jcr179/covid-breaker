@@ -170,7 +170,7 @@ area_lookup = {}
 area_id = 0
 for area_key in area_keys:
 	prov_state, country_reg = area_key.split('_') 
-	if len(prov_state) == 0: prov_state = float('nan') 
+	if len(prov_state) == 0: prov_state = None
 	""" TODO: check if setting null prov_state to float('nan') makes corresponding json value null """
 	""" UPdate: apparently None in python maps to null in json """
 	area_lookup[area_key] = (prov_state, country_reg, area_id)
@@ -251,24 +251,24 @@ for date_key in date_keys:
 		try:
 			area_stat_dict[date_key][area_key]["confirmed"] = int(row[date_key + '_co'].values[0]) # typecast to int to allow json serialization
 		except Exception: # keyerror or indexerror for all stats
-			area_stat_dict[date_key][area_key]["confirmed"] = float('nan')
+			area_stat_dict[date_key][area_key]["confirmed"] = None
 			
 		try:
 			area_stat_dict[date_key][area_key]["deaths"] = int(row[date_key + '_de'].values[0])
 		except Exception:
-			area_stat_dict[date_key][area_key]["deaths"] = float('nan')
+			area_stat_dict[date_key][area_key]["deaths"] = None
 			
 		try:
 			area_stat_dict[date_key][area_key]["recovered"] = int(row[date_key].values[0])
 		except Exception:
-			area_stat_dict[date_key][area_key]["recovered"] = float('nan')
+			area_stat_dict[date_key][area_key]["recovered"] = None
 			
 		try:
 			area_stat_dict[date_key][area_key]["latitude"] = float(row['Lat_co'].values[0])
 			area_stat_dict[date_key][area_key]["longitude"] = float(row['Long_co'].values[0])
 		except Exception:
-			area_stat_dict[date_key][area_key]["latitude"] = float('nan')
-			area_stat_dict[date_key][area_key]["longitude"] = float('nan')						
+			area_stat_dict[date_key][area_key]["latitude"] = None
+			area_stat_dict[date_key][area_key]["longitude"] = None					
 			
 	count += 1
 

@@ -1,0 +1,3 @@
+- Start 2 instances of elasticsearch. (Remember to pass the 2nd instance a path for data and logs, see https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html)
+- Give curl request:
+curl -H "Content-Type: application/json" -XPOST "localhost:9200/days/_bulk?pretty&refresh" --data-binary "@/home/daru/covid-breaker/scripts/transformed/transformed.json"
