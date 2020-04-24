@@ -50,33 +50,41 @@ directories = [os.path.join(dd, 'biorxiv_medrxiv/biorxiv_medrxiv/pdf_json/'), \
 			   os.path.join(dd,'noncomm_use_subset/noncomm_use_subset/pdf_json/'),\
 			   os.path.join(dd,'noncomm_use_subset/noncomm_use_subset/pmc_json/')]
 
-for directory in directories:
-	
-	print('Directory: ', directory)
-	
-	paper_files = [paper for paper in os.listdir(directory)]
-	
-	num_paper_files = len(paper_files)
-	
-	papers_written_this_dir = 0
-	
-	for paper_file in tqdm(range(num_paper_files)):
+try:
+	for directory in directories:
 		
-		paper = os.path.join(directory, paper_files[paper_file])
+		print('Directory: ', directory)
 		
-		with open(paper) as f:
-			data = json.load(f)
+		paper_files = [paper for paper in os.listdir(directory)]
+		
+		num_paper_files = len(paper_files)
+		
+		papers_written_this_dir = 0
+		
+		for paper_file in tqdm(range(num_paper_files)):
 			
-		keep = get_fields(data)
-					
-		""" for now, leave out original input directory in output file """
-		output_file = os.path.join(os.getcwd(), 'trimmed_papers', paper_files[paper_file])
-		
-		with open(output_file, 'w') as f:
-			json.dump(keep, f)
+			paper = os.path.join(directory, paper_files[paper_file])
+			
+			with open(paper) as f:
+				data = json.load(f)
+				
+			keep = get_fields(data)
+						
+			""" for now, leave out original input directory in output file """
+			output_file = os.path.join(os.getcwd(), 'trimmed_papers', paper_files[paper_file])
+			
+			with open(output_file, 'w') as f:
+				json.dump(keep, f)
 
-		papers_written_this_dir += 1
-	print('Papers written to ', directory, ':', papers_written_this_dir)
+			papers_written_this_dir += 1
+		print('Papers written to ', directory, ':', papers_written_this_dir)
+		
+	# Get rid of the original data on success, to save space
+	cmd = 'rm -rf ./data/'
+	os.system(cmd)
+	
+except Exception as e:
+	print(e)
 
 print('========== Transformation complete ==========')
 

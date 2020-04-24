@@ -27,8 +27,6 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"math/rand"
-	"strconv"
 	"strings"
 	"time"
 	"os"
@@ -40,19 +38,6 @@ import (
 	"github.com/elastic/go-elasticsearch/v8"
 	"github.com/elastic/go-elasticsearch/v8/esapi"
 )
-
-type Article struct {
-	ID        int       `json:"id"`
-	Title     string    `json:"title"`
-	Body      string    `json:"body"`
-	Published time.Time `json:"published"`
-	Author    Author    `json:"author"`
-}
-
-type Author struct {
-	FirstName string `json:"first_name"`
-	LastName  string `json:"last_name"`
-}
 
 var (
 	_     = fmt.Print
@@ -66,8 +51,6 @@ func init() {
 	flag.IntVar(&batch, "batch", 255, "Number of documents to send in one batch")
 	flag.StringVar(&index_name, "index_name", "default_index_name", "Name of index")
 	flag.Parse()
-
-	rand.Seed(time.Now().UnixNano())
 }
 
 func main() {
@@ -99,7 +82,6 @@ func main() {
 		raw map[string]interface{}
 		blk *bulkResponse
 
-		articles  []*Article
 		indexName = index_name
 
 		numItems   int
@@ -121,23 +103,6 @@ func main() {
 		log.Fatalf("Error creating the client: %s", err)
 	}
 
-	// Generate the articles collection
-	//
-	
-	names := []string{"Alice", "John", "Mary"}
-	for i := 1; i < count+1; i++ {
-		articles = append(articles, &Article{
-			ID:        i,
-			Title:     strings.Join([]string{"Title", strconv.Itoa(i)}, " "),
-			Body:      "Lorem ipsum dolor sit amet...",
-			Published: time.Now().Round(time.Second).UTC().AddDate(0, 0, i),
-			Author: Author{
-				FirstName: names[rand.Intn(len(names))],
-				LastName:  "Smith",
-			},
-		})
-	}
-	log.Printf("→ Generated %s articles", humanize.Comma(int64(len(articles))))
 	fmt.Print("→ Sending batch ")
 
 	// Re-create the index/
@@ -161,20 +126,13 @@ func main() {
 
 	start := time.Now().UTC()
 
-	// Loop over the collection
-	//
-	
-	
-	
-	
+	// Loop over the collection	
 	files, err := ioutil.ReadDir("./trimmed_papers/")
     if err != nil {
         fmt.Println("Error in accessing directory:", err)
     }
 
-	
-	
-	for i, file := range files { // todo: iterate over trimmed_files jsons 
+	for i, file := range files { 
 		numItems++
 
 		currBatch = i / batch
@@ -188,22 +146,13 @@ func main() {
 		// fmt.Printf("%s", meta) // <-- Uncomment to see the payload
 
 		// Prepare the data payload: encode article to JSON
-		
-		
-		//data, err := os.Open(file) //json.Marshal(a)
-		
 		filename, err := os.Open(path.Join("trimmed_papers", file.Name()))
 		
 		data, err := ioutil.ReadAll(filename)
 		
-		//fmt.Printf("Filename: %s ... %s\n", file.Name(), filename)
-		
-		//fmt.Printf("Data: %s\n", data)
-		
-		
 		if err != nil {
 			log.Fatalf("Cannot encode article %d: %s", i+1, err)
-		} // todo: just read in each json file as 'data'
+		} 
 
 		// Append newline to the data payload
 		//

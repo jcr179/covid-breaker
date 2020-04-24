@@ -1,4 +1,4 @@
-- Start 2 instances of elasticsearch. (Remember to pass the 2nd instance a path for data and logs, see https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html)
+- Before using etl.sh, Start 2 instances of elasticsearch. (Remember to pass the 2nd instance a path for data and logs, see https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html)
 
 
 # index it:
@@ -20,7 +20,7 @@ curl -X GET "localhost:9200/papers/_search?pretty" -H 'Content-Type: application
 # curl -X DELETE "localhost:9200/[index name]?pretty"
 
 
-original repository/data readme:
+(OUTDATED!) original repository/data readme:
 
 1. Download dataset https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge to this folder.
 It will have several directories mentioned in 'parse_paper_jsons.py' filled with papers. 
@@ -36,9 +36,5 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-
 
 (Done)
 
-N. 'trimmed_to_single.py' is a script that takes the .jsons in trimmed_papers and puts them all in a 
-raw json file ready to be directly bulk indexed with elasticsearch via curl, but it seems to be
-too big for memory to do all at once, hence the approach taken with indexer.go - but I will keep it
-in case it becomes useful later.
 
-N2. 'paper.json' is a single paper formatted to be ready for bulk indexing via curl, for testing only.
+N2. 'paper_single.json' is a single paper formatted to be ready for bulk indexing via curl, for testing only.
