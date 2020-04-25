@@ -145,14 +145,19 @@ func main() {
 		meta := []byte(fmt.Sprintf(`{ "index" : { "_id" : "%d" } }%s`, i+1, "\n"))
 		// fmt.Printf("%s", meta) // <-- Uncomment to see the payload
 
-		// Prepare the data payload: encode article to JSON
 		filename, err := os.Open(path.Join("trimmed_papers", file.Name()))
+
+		if err != nil {
+			log.Fatalf("File open error for article %d: %s", i+1, err)
+		} 
 		
 		data, err := ioutil.ReadAll(filename)
 		
 		if err != nil {
 			log.Fatalf("Cannot encode article %d: %s", i+1, err)
 		} 
+		
+		filename.Close()
 
 		// Append newline to the data payload
 		//

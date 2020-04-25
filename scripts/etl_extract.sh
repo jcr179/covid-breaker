@@ -9,7 +9,7 @@ cd data
 unzip -q CORD-19-research-challenge.zip
 echo "Papers unzipped. Removing unnecessary files..."
 rm CORD-19-research-challenge.zip
-rm -rf cord_19_embeddings_4_17
+rm -r cord_19_embeddings_4_17
 rm COVID.DATA.LIC.AGMT.pdf
 rm json_schema.txt
 rm metadata.csv
