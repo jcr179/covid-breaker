@@ -38,3 +38,21 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-
 
 
 N2. 'paper_single.json' is a single paper formatted to be ready for bulk indexing via curl, for testing only.
+
+-----------------
+BERT:
+pip install ... 
+tensorflow==1.15.2 (tf2 forces you to have to upgrade the python files with tf2_upgrade_v2)
+bert-serving-server
+bert-serving-client 
+
+then run 
+bert-serving-start -model_dir cased_L-12_H-768_A-12/ -num_worker=1
+where 'cased_L...' is where the bert model is saved (from https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip)
+*note: num_worker controls the number of allowed concurrent requests 
+
+-----------------
+bert encoding implemented in etl_transform.py , 
+but you have to run bert-serving-server process first!
+bert-serving-start -num_worker=1 -model_dir cased_L-12_H-768_A-12/ -num_worker=1 -max_seq_len=NONE
+(not setting last option defaults max seq len to 25 which can make embeddings less accurate)

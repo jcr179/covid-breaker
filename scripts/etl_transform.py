@@ -2,9 +2,15 @@ import json
 import os
 from tqdm import tqdm
 from copy import deepcopy
+from bert_serving.client import BertClient
+
+bc = BertClient(output_fmt='list')
 
 # input: cord-19 dataset in directory ./data/
 # output: each paper as its own json, trimmed and ready to upload to elasticsearch in ./trimmed_papers/
+
+def get_bert_encoding(text: str) -> list:
+	return bc.encode([text])[0]
 
 def write_json(output_file: str, data: dict, counter: int) -> int:
 	with open(output_file, 'w') as f:
@@ -44,6 +50,8 @@ def handle_file(data: dict, p_num_offset: int):
 			
 			keep_clone['text'] = paragraph['text']
 			
+			keep_clone['text_vector'] = get_bert_encoding(paragraph['text'])
+			
 
 			output_file = os.path.join(os.getcwd(), 'trimmed_papers', str(p_num) + '.json')
 			
@@ -70,8 +78,8 @@ directories = [os.path.join(dd, 'biorxiv_medrxiv/biorxiv_medrxiv/pdf_json/'), \
 			   os.path.join(dd,'noncomm_use_subset/noncomm_use_subset/pdf_json/'),\
 			   os.path.join(dd,'noncomm_use_subset/noncomm_use_subset/pmc_json/')]
 """
-directories = [os.path.join(dd, 'biorxiv_medrxiv/biorxiv_medrxiv/pdf_json/'), \
-			   os.path.join(dd,'noncomm_use_subset/noncomm_use_subset/pdf_json/')]
+directories = [os.path.join(dd, 'biorxiv_medrxiv/biorxiv_medrxiv/pdf_json/')]
+			   #os.path.join(dd,'noncomm_use_subset/noncomm_use_subset/pdf_json/')]
 
 p_num_offset = 0
 
