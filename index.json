@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "dynamic": "true",
+    "_source": {
+      "enabled": "true"
+    },
+    "properties": {
+      "title": {
+        "type": "text"
+      },
+      "abstract": {
+        "type": "text"
+      },
+      "authors": {
+        "type": "text"
+      },
+      "paper_id": {
+        "type": "text"
+      },
+      "text": {
+        "type": "text"
+      },
+      "text_vector": {
+        "type": "dense_vector",
+        "dims": 768
+      }
+    }
+  }
+}

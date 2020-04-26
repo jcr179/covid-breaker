@@ -110,7 +110,45 @@ func main() {
 	if res, err = es.Indices.Delete([]string{indexName}); err != nil {
 		log.Fatalf("Cannot delete index: %s", err)
 	}
-	res, err = es.Indices.Create(indexName)
+	// Old, basic way to create index 
+	//res, err = es.Indices.Create(indexName)
+	res, err = es.Indices.Create(
+	indexName,
+	es.Indices.Create.WithBody(strings.NewReader(`{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "dynamic": "true",
+    "_source": {
+      "enabled": "true"
+    },
+    "properties": {
+      "title": {
+        "type": "text"
+      },
+      "abstract": {
+        "type": "text"
+      },
+      "authors": {
+        "type": "text"
+      },
+      "paper_id": {
+        "type": "text"
+      },
+      "text": {
+        "type": "text"
+      },
+      "text_vector": {
+        "type": "dense_vector",
+        "dims": 768
+      }
+    }
+  }
+}`)),
+)
+	
 	if err != nil {
 		log.Fatalf("Cannot create index: %s", err)
 	}
