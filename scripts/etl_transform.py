@@ -102,21 +102,8 @@ try:
 						
 			with open(paper) as f:
 				data = json.load(f)
-				
-			# new rouine here
 
 			p_num_offset = handle_file(data, p_num_offset)
-			
-				
-			#keep = get_fields(data)
-						
-			""" for now, leave out original input directory in output file """
-			#output_file = os.path.join(os.getcwd(), 'trimmed_papers', paper_files[paper_file])
-			
-			#with open(output_file, 'w') as f:
-			#	json.dump(keep, f)
-				
-			# stop removing old code here
 
 			papers_written_this_dir += 1
 			
@@ -131,6 +118,8 @@ try:
 	
 except Exception as e:
 	print(e)
+
+bc.close()
 
 print('========== Transformation complete ==========')
 

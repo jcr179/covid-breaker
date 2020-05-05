@@ -16,8 +16,15 @@ type Paragraph struct {
 	Authors 	string 
 	Abstract 	string
 	Text 		string
-	Text_vector [3]float64 // 768
+	Text_vector [768]float64 // 768
 	Paper_id 	string
+}
+
+type StoreValue struct {
+	Title		string
+	Authors		string
+	Abstract	string
+	Text		string
 }
 
 func CreatePool(idle int, active int) *redis.Pool {

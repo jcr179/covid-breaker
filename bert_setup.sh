@@ -15,9 +15,9 @@ rm cased_L-12_H-768_A-12.zip
 
 # Start BERT server
 echo "Starting BERT server..."
-bert-serving-start -num_worker=2 -model_dir cased_L-12_H-768_A-12/ -max_seq_len=NONE &
+bert-serving-start -num_worker=1 -model_dir cased_L-12_H-768_A-12/ -max_seq_len=NONE
 
 # Done: Now you can run scripts/etl.sh 
-echo "BERT setup and server startup complete." 
-echo "To foreground BERT server, use 'jobs' and then 'fg %[num of BERT process]'"
-echo "Remember to start 2 elasticsearch nodes before running etl_load.go"
+# "BERT setup and server startup complete." 
+# "To foreground BERT server, use 'jobs' and then 'fg %[num of BERT process]'"
+# "Remember to start 2 elasticsearch nodes before running etl_load.go"
